@@ -17,7 +17,8 @@ def faturamento():
 
 @app.route("/vendas/produtos")
 def vendas_produtos():
-    return {"Nome":"Rodolfo","Profissao":"Analista de Dados","Empresa":"Agibank"}
+    df_vendas_produtos = df['Produto','Valor Final'].groupby('Produto').sum()
+    return {df_vendas_produtos}
 
 
 @app.route("/vendas/produtos/produtoespecifico")
