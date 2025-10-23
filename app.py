@@ -11,7 +11,7 @@ app = Flask(__name__) ## cria o site
 
 @app.route("/") ## diz em qual link a função vai rodar
 def faturamento():
-    faturamento = sum(df['Valor Final'])
+    faturamento = float(df['Valor Final'].sum())
     return {"Faturamento":faturamento}
 
 
