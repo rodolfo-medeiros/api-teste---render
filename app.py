@@ -26,8 +26,8 @@ def vendas_produtos():
 def vendas_produto_especifico(produto):
     df_vendas_produtos = df[['Produto','Valor Final']].groupby('Produto').sum()
     if produto in df_vendas_produtos.index:
-        vendas_produto_especifico = df_vendas_produtos.loc[produto]
-        dic_vendas_produto = vendas_produto_especifico.to_dict()
+        vendas_produto = df_vendas_produtos.loc[produto]
+        dic_vendas_produto = vendas_produto.to_dict()
         return dic_vendas_produto
     
     else:
