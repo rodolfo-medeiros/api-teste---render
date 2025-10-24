@@ -18,7 +18,8 @@ def faturamento():
 @app.route("/vendas/produtos")
 def vendas_produtos():
     df_vendas_produtos = df[['Produto','Valor Final']].groupby('Produto').sum()
-    return {df_vendas_produtos}
+    dict_vendas_produtos = df_vendas_produtos.to_dict()
+    return 
 clear
 
 @app.route("/vendas/produtos/produtoespecifico")
