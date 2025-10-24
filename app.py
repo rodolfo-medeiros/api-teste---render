@@ -20,7 +20,7 @@ def vendas_produtos():
     df_vendas_produtos = df[['Produto','Valor Final']].groupby('Produto').sum()
     dict_vendas_produtos = df_vendas_produtos.to_dict()
     return dict_vendas_produtos
-clear
+
 
 @app.route("/vendas/produtos/produtoespecifico")
 def vendas_produto_especifico():
