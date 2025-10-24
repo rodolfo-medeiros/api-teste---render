@@ -23,15 +23,15 @@ def vendas_produtos():
 
 
 @app.route("/vendas/produtos/<produtoespecifico>")
-def vendas_produto_especifico(produtoespecifico):
+def vendas_produto_especifico(produto):
     df_vendas_produtos = df[['Produto','Valor Final']].groupby('Produto').sum()
-    if produtoespecifico in df_vendas_produtos.index:
-        vendas_produto_especifico = df_vendas_produtos.loc[produtoespecifico]
+    if produtoe in df_vendas_produtos.index:
+        vendas_produto_especifico = df_vendas_produtos.loc[produto]
         dic_vendas_produto = vendas_produto_especifico.to_dict()
         return dic_vendas_produto
     
     else:
-        return {produtoespecifico: 'Inexistente'}
+        return {produto: 'Inexistente'}
         
 
 
