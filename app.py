@@ -34,7 +34,4 @@ def vendas_produto_especifico(produto):
         return {produto: 'Inexistente'}
         
 
-
-
-
 app.run(host="0.0.0.0") 
